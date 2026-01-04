@@ -248,5 +248,10 @@ details strong { color: var(--gold-main); font-weight: 600; }
     font-family: var(--font-sans);
     font-size: 0.9rem;
     border-top: 1px solid rgba(212, 175, 55, 0.2); /* Fine ligne dorée */
+    clear: both;            /* Empêche le footer de monter à côté d'autres éléments */
+    position: relative;     /* Lui donne un poids physique dans la page */
+    margin-top: 100px;      /* Crée un espace après ton dernier cadre d'expérience */
+    width: 100%;
 }
+
 
