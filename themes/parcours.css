@@ -400,4 +400,15 @@ hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 50px 0; }
     .school-logo-tiny { width: 60px; height: 60px; }
     .school-logo-tiny.logo-xl { width: 180px; max-height: 150px; }
     .school-logo-large.logo-xl { max-width: 200px; }
+
+}
+
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--bg-dark); /* Utilise ta variable de fond */
+    color: var(--accent); /* Ton doré */
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2); /* Fine ligne dorée */
 }
