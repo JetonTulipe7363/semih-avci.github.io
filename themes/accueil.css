@@ -309,4 +309,14 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
     background: var(--gold-main); /* Sur l'accueil c'est --gold-main et non --gold-500 */
+
+}
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--bg-dark); /* Utilise ta variable de fond */
+    color: var(--accent); /* Ton doré */
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2); /* Fine ligne dorée */
 }
