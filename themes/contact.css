@@ -233,4 +233,15 @@ body {
     .contact-item { flex-direction: column; text-align: center; padding: 15px 0; gap: 15px; }
     .contact-link { word-break: break-all; }
     .social-btn { width: 100%; justify-content: center; }
+
+}
+
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--bg-dark); /* Utilise ta variable de fond */
+    color: var(--accent); /* Ton doré */
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2); /* Fine ligne dorée */
 }
