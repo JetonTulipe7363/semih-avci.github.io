@@ -245,7 +245,6 @@ details strong { color: var(--gold-main); font-weight: 600; }
     display: flex;              /* Active le mode Flexbox */
     justify-content: center;    /* Centre horizontalement (Gauche/Droite) */
     align-items: center;        /* Centre verticalement (Haut/Bas) */
-    min-height: 120px;
     /* --- ESPACEMENT --- */
     padding: 30px;         /* Un peu plus d'espace pour le côté "Luxe" */
     margin-top: 100px;          /* Espace par rapport aux expériences */
@@ -264,6 +263,7 @@ details strong { color: var(--gold-main); font-weight: 600; }
     letter-spacing: 2px;
     box-sizing: border-box;
 }
+
 
 
 
