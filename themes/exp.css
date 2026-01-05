@@ -624,31 +624,34 @@ details strong {
 
 /* 7. PIED DE PAGE (FOOTER) */
 .site-footer {
-    /* Active le mode Flexbox pour aligner */
+    /* Active le centrage automatique */
     display: flex;
-    /* Centre horizontalement */
+    /* Centre le texte de gauche à droite */
     justify-content: center;
-    /* Centre verticalement */
+    /* Centre le texte de haut en bas */
     align-items: center;
 
-    /* Espace en haut et en bas du texte */
-    padding: 25px 0;
-    /* Espace au-dessus du footer */
-    margin-top: 50px;
-
+    /* On définit une hauteur fixe, c'est plus stable pour le centrage */
+    height: 80px; 
+    /* Espace au-dessus de la barre noire */
+    margin-top: 60px;
+    /* Prend toute la largeur */
     width: 100%;
-    position: relative;
-    /* Force le footer à passer sous tout le reste */
-    clear: both;
-
+    
+    /* Couleur de fond noir */
     background-color: var(--bg-dark);
-    /* Fine ligne dorée de séparation */
+    /* Ligne dorée au-dessus */
     border-top: 1px solid rgba(212, 175, 55, 0.15);
 
-    color: var(--gold-main);
+    /* --- RÉGLAGE PRÉCIS DU TEXTE --- */
+    color: var(--gold-500);
     font-family: var(--font-sans);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    box-sizing: border-box;
+    /* Écrase l'espace invisible au-dessus/dessous des lettres */
+    line-height: 1; 
+    /* Force le texte à ne pas avoir de marges internes */
+    padding: 0; 
 }
+
