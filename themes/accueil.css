@@ -44,12 +44,7 @@ body {
    ========================================================================== */
 .navbar {
     position: fixed; top: 0; left: 0; width: 100%; height: 90px;
-    
-    /* --- CORRECTION LAG #2 : SUPPRESSION DU FLOU --- */
-    /* Remplacé par un fond quasi-opaque */
     background: rgba(5, 5, 5, 0.98);
-    /* backdrop-filter: blur(20px); <-- SUPPRIMÉ */
-    /* -webkit-backdrop-filter: blur(20px); <-- SUPPRIMÉ */
     
     border-bottom: 1px solid rgba(212, 175, 55, 0.15);
     display: flex; align-items: center; justify-content: space-between;
@@ -319,4 +314,26 @@ body {
     font-family: var(--font-sans);
     font-size: 0.9rem;
     border-top: 1px solid rgba(212, 175, 55, 0.2); /* Fine ligne dorée */
+}
+
+/*SCROLLBAR SUR LA DROITE (En or)*/
+::-webkit-scrollbar {
+    width: 12px; /* La largeur de la barre */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark); /* Le fond de la barre (Noir) */
+}
+
+::-webkit-scrollbar-thumb {
+    /* C'EST ICI QUE JE L'AI MISE EN OR */
+    background: var(--gold-dark); 
+    
+    border-radius: 6px; /* Pour l'arrondir */
+    border: 3px solid var(--bg-dark); /* Pour créer un petit espace autour */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    /* C'EST ICI QU'ELLE DEVIENT PLUS BRILLANTE QUAND ON PASSE LA SOURIS */
+    background: var(--gold-main); 
 }
