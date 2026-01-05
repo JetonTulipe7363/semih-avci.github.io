@@ -241,17 +241,27 @@ details p { margin-bottom: 25px; text-align: justify; }
 details strong { color: var(--gold-main); font-weight: 600; }
 
 .site-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--bg-dark); /* Utilise ta variable de fond */
-    color: var(--gold-500); /* Ton doré */
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(212, 175, 55, 0.2); /* Fine ligne dorée */
-    clear: both;            /* Empêche le footer de monter à côté d'autres éléments */
-    position: relative;     /* Lui donne un poids physique dans la page */
-    margin-top: 100px;      /* Crée un espace après ton dernier cadre d'expérience */
+    /* --- CENTRAGE PARFAIT (FLEXBOX) --- */
+    display: flex;              /* Active le mode Flexbox */
+    justify-content: center;    /* Centre horizontalement (Gauche/Droite) */
+    align-items: center;        /* Centre verticalement (Haut/Bas) */
+    /* --- ESPACEMENT --- */
+    padding: 40px 20px;         /* Un peu plus d'espace pour le côté "Luxe" */
+    margin-top: 100px;          /* Espace par rapport aux expériences */
     width: 100%;
+    /* --- POSITIONNEMENT --- */
+    position: relative;
+    clear: both;                /* Force le footer à passer sous les éléments flottants */
+    /* --- DESIGN --- */
+    background-color: var(--bg-dark); 
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    /* --- TYPOGRAPHIE --- */
+    color: var(--gold-500);     /* Ton doré */
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
+
 
 
