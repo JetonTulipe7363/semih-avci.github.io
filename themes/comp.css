@@ -1,6 +1,3 @@
-/* themes/comp.css - Version Corrigée & Alignée sur Accueil */
-
-/* 1. RESET & BASES */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -31,7 +28,6 @@ body {
     color: #000000;
 }
 
-/* Scrollbar Dorée */
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -50,7 +46,6 @@ body {
     background: #d4af37;
 }
 
-/* 2. BARRE DE NAVIGATION (Alignée sur Accueil) */
 .navbar {
     position: fixed;
     top: 0;
@@ -91,7 +86,7 @@ body {
     flex: 1;
     justify-content: center;
     gap: 2vw;
-    margin: 0 10px; /* Corrigé pour correspondre à Accueil */
+    margin: 0 10px; 
 }
 
 .nav-links a {
@@ -101,7 +96,7 @@ body {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 5px 0; /* Corrigé : 5px au lieu de 2px pour uniformité */
+    padding: 5px 0; 
     position: relative;
     transition: all 0.3s ease;
 }
@@ -129,7 +124,6 @@ body {
     width: 100%;
 }
 
-/* Bouton CV (Aligné sur Accueil) */
 .btn-cv {
     display: inline-flex;
     align-items: center;
@@ -138,7 +132,7 @@ body {
     padding: 0 25px;
     min-width: 125px;
     gap: 8px;
-    margin: 0 25px 0 auto; /* Corrigé pour correspondre à Accueil */
+    margin: 0 25px 0 auto; 
     background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
     color: #000000 !important;
     font-size: 0.75rem;
@@ -187,7 +181,6 @@ body {
     left: 100%;
 }
 
-/* 3. CONTENU PAGE COMPÉTENCES */
 .main-container {
     width: 90%;
     max-width: 1280px;
@@ -216,7 +209,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 4. SLIDER */
 input[name="main-view"] {
     display: none;
 }
@@ -295,7 +287,6 @@ input[name="main-view"] {
     z-index: 10;
 }
 
-/* 5. DASHBOARD TECHNIQUE */
 .skills-wrapper {
     display: flex;
     background-color: #0a0a0a;
@@ -452,7 +443,6 @@ input[name="main-view"] {
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
 }
 
-/* Langues */
 .language-item {
     margin-bottom: 40px;
 }
@@ -514,7 +504,6 @@ input[name="main-view"] {
     opacity: 0.5;
 }
 
-/* 6. SOFT SKILLS */
 .human-skills-container {
     background-color: #0a0a0a;
     border: 1px solid rgba(212, 175, 55, 0.3);
@@ -615,7 +604,6 @@ input[name="main-view"] {
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
-/* 7. MODALES */
 .modal-toggle {
     display: none;
 }
@@ -707,7 +695,6 @@ input[name="main-view"] {
     font-weight: 600;
 }
 
-/* 8. FOOTER */
 .site-footer {
     text-align: center;
     padding: 20px;
@@ -717,7 +704,6 @@ input[name="main-view"] {
     border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-/* 9. RESPONSIVE */
 @media (max-width: 1024px) {
     .navbar {
         flex-direction: column;
