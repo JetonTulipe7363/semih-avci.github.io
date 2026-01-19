@@ -1,9 +1,7 @@
-/* themes/comp.css - Version "Pure & Clean" */
+/* themes/comp.css - Version Corrigée & Alignée sur Accueil */
 
 /* 1. RESET & BASES */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -15,10 +13,10 @@ html {
 }
 
 body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
     background-color: #050505;
     color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -52,7 +50,7 @@ body {
     background: #d4af37;
 }
 
-/* 2. BARRE DE NAVIGATION */
+/* 2. BARRE DE NAVIGATION (Alignée sur Accueil) */
 .navbar {
     position: fixed;
     top: 0;
@@ -73,7 +71,6 @@ body {
     display: flex;
     align-items: center;
     margin-right: 10px;
-    flex-shrink: 0;
 }
 
 .nav-logo-img {
@@ -82,7 +79,7 @@ body {
     object-fit: contain;
     margin-right: 15px;
     filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .navbar:hover .nav-logo-img {
@@ -93,24 +90,20 @@ body {
     display: flex;
     flex: 1;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px 2vw;
-    margin: 0 15px;
+    gap: 2vw;
+    margin: 0 10px; /* Corrigé pour correspondre à Accueil */
 }
 
 .nav-links a {
     text-decoration: none;
     color: #a3a3a3;
-    font-family: 'Montserrat', sans-serif;
     font-size: clamp(0.7rem, 1vw + 0.3rem, 0.85rem);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 2px 0;
-    transition: all 0.3s ease;
+    padding: 5px 0; /* Corrigé : 5px au lieu de 2px pour uniformité */
     position: relative;
-    white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
 .nav-links a::after {
@@ -136,7 +129,7 @@ body {
     width: 100%;
 }
 
-/* Bouton CV */
+/* Bouton CV (Aligné sur Accueil) */
 .btn-cv {
     display: inline-flex;
     align-items: center;
@@ -145,11 +138,9 @@ body {
     padding: 0 25px;
     min-width: 125px;
     gap: 8px;
-    flex-shrink: 0;
-    margin: 0 0 0 auto;
+    margin: 0 25px 0 auto; /* Corrigé pour correspondre à Accueil */
     background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
     color: #000000 !important;
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -173,9 +164,7 @@ body {
     width: 14px;
     height: 14px;
     stroke-width: 2.5;
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-    display: block;
+    transition: transform 0.3s;
     margin-top: -2px;
 }
 
@@ -198,7 +187,7 @@ body {
     left: 100%;
 }
 
-/* 3. LAYOUT & TITRES */
+/* 3. CONTENU PAGE COMPÉTENCES */
 .main-container {
     width: 90%;
     max-width: 1280px;
@@ -223,17 +212,11 @@ body {
 }
 
 @keyframes fadeDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* 4. SLIDER (SWITCH) */
+/* 4. SLIDER */
 input[name="main-view"] {
     display: none;
 }
@@ -288,7 +271,6 @@ input[name="main-view"] {
     transform: translateX(100%);
 }
 
-/* 5. GESTION DES VUES */
 .views-container {
     position: relative;
     min-height: 800px;
@@ -313,7 +295,7 @@ input[name="main-view"] {
     z-index: 10;
 }
 
-/* 6. DASHBOARD TECHNIQUE */
+/* 5. DASHBOARD TECHNIQUE */
 .skills-wrapper {
     display: flex;
     background-color: #0a0a0a;
@@ -339,7 +321,6 @@ input[name="main-view"] {
     display: none;
 }
 
-/* Sidebar Onglets */
 .skills-sidebar {
     width: 320px;
     background-color: #080808;
@@ -379,7 +360,6 @@ input[name="main-view"] {
     padding-left: 45px;
 }
 
-/* Contenu des compétences */
 .skills-display {
     flex: 1;
     padding: 60px;
@@ -392,14 +372,8 @@ input[name="main-view"] {
 }
 
 @keyframes slideContent {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 #tab-reseaux:checked ~ .skills-display .content-reseaux,
@@ -420,7 +394,6 @@ input[name="main-view"] {
     display: inline-block;
 }
 
-/* Grille et Cartes */
 .skill-list {
     list-style: none;
     padding: 0;
@@ -461,7 +434,6 @@ input[name="main-view"] {
     background: transparent;
     border: 1px solid #d4af37;
     color: #d4af37;
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -542,7 +514,7 @@ input[name="main-view"] {
     opacity: 0.5;
 }
 
-/* 7. COMPÉTENCES HUMAINES */
+/* 6. SOFT SKILLS */
 .human-skills-container {
     background-color: #0a0a0a;
     border: 1px solid rgba(212, 175, 55, 0.3);
@@ -625,7 +597,6 @@ input[name="main-view"] {
     background: rgba(212, 175, 55, 0.1);
     border: 1px solid transparent;
     color: #d4af37;
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -644,7 +615,7 @@ input[name="main-view"] {
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
-/* 8. MODALES */
+/* 7. MODALES */
 .modal-toggle {
     display: none;
 }
@@ -736,22 +707,28 @@ input[name="main-view"] {
     font-weight: 600;
 }
 
-/* Footer */
+/* 8. FOOTER */
 .site-footer {
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     background-color: #050505;
     color: #d4af37;
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
     border-top: 1px solid rgba(212, 175, 55, 0.2);
-    margin-top: 100px;
-    position: relative;
-    clear: both;
 }
 
 /* 9. RESPONSIVE */
 @media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 30px;
+        gap: 15px;
+    }
+    .nav-links, .btn-cv {
+        width: 100%;
+        margin: 0;
+    }
     .main-container {
         width: 95%;
     }
@@ -761,38 +738,14 @@ input[name="main-view"] {
     .soft-skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .navbar {
-        padding: 0 30px;
-    }
-    .nav-links {
-        gap: 20px;
-    }
 }
 
 @media (max-width: 900px) {
     .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-        gap: 15px;
         background: #050505;
-        border-bottom: 1px solid #aa8c2c;
     }
     .nav-links {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px 20px;
-        margin: 5px 0 15px 0;
-    }
-    .btn-cv {
-        width: 100%;
-        margin-left: 0;
-        min-width: auto;
-    }
-    .page-title {
-        font-size: 2.8rem;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
     }
     .skills-wrapper {
         flex-direction: column;
