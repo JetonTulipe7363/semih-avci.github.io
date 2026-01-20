@@ -26,14 +26,17 @@ body {
 ::-webkit-scrollbar {
     width: 12px;
 }
+
 ::-webkit-scrollbar-track {
     background: #050505;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #aa8c2c;
     border-radius: 6px;
     border: 3px solid #050505;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #d4af37;
 }
@@ -73,15 +76,7 @@ body {
     transform: scale(1.05);
 }
 
-.nav-toggle {
-    display: none;
-}
-
-.nav-burger {
-    display: none;
-}
-
-.btn-cv-mobile {
+.nav-toggle, .nav-burger, .btn-cv-mobile {
     display: none;
 }
 
@@ -154,6 +149,18 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
     background: linear-gradient(135deg, #fff7cc 0%, #d4af37 100%);
+}
+
+.btn-cv-desktop svg {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2.5;
+    transition: transform 0.3s;
+    margin-top: -2px;
+}
+
+.btn-cv-desktop:hover svg {
+    transform: rotate(-10deg) scale(1.1);
 }
 
 .btn-cv-desktop::before {
@@ -480,9 +487,9 @@ hr {
     .navbar {
         height: 70px;
         padding: 0 20px;
-        flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+        flex-direction: row;
+        background: #050505;
     }
 
     .nav-logo-img {
@@ -517,10 +524,9 @@ hr {
         position: fixed;
         top: 0;
         right: 0;
-        width: 100%;
-        max-width: 300px;
+        width: 75%;
         height: 100vh;
-        background-color: #080808;
+        background-color: #050505;
         border-left: 1px solid #d4af37;
         flex-direction: column;
         justify-content: center;
@@ -530,8 +536,8 @@ hr {
         transition: transform 0.4s ease-in-out;
         margin: 0;
         z-index: 2000;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.9);
-        padding: 40px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.8);
+        padding: 20px;
     }
 
     .nav-toggle:checked ~ .nav-links {
@@ -549,11 +555,8 @@ hr {
     }
 
     .nav-links a {
-        font-size: 1.1rem;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        font-size: 1.2rem;
+        color: #f0f0f0;
     }
 
     .btn-cv-mobile {
@@ -567,11 +570,14 @@ hr {
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 1px;
+        text-decoration: none;
+        font-size: 0.9rem;
     }
 
     .main-container {
         width: 95%;
         margin-top: 10px;
+        overflow-x: hidden;
     }
     
     .page-title {
@@ -597,30 +603,13 @@ hr {
     .timeline-content {
         margin-left: 25px;
         padding: 20px;
+        width: calc(100% - 25px);
     }
     
     .school-logo-tiny, .logo-xl {
-        max-width: 120px;
-        max-height: 50px;
-    }
-    
-    .panel-content {
-        width: 100%;
         max-width: 100%;
-        padding: 40px 20px;
-    }
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-}
-meline-content {
-        margin-left: 25px;
-        padding: 20px;
-    }
-    
-    .school-logo-tiny, .logo-xl {
-        max-width: 120px;
-        max-height: 50px;
+        height: auto;
+        max-height: 60px;
     }
     
     .panel-content {
