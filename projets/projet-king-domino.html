@@ -3,24 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Explication de mon projet de développement du jeu de King Domino codé en Python par Semih Avci. Ma programmation était axéeF sur l'algorithme récursif de calcul de scores, la gestion de matrices 2D et tous cela a été fait en collaboration avec mon binôme Mr V.">
-	<meta name="keywords" content="Semih Avci, King Domino, Python, algorithme récursif, matrices, 2 dimensions, 2D, programmation en binôme, gestion de projet, informatique, calcul de scores, code source, licence maths, licence informatique">
-    <title>Projet Python : King Domino | Algorithmes & Récursivité - Semih Avci</title>
+    <meta name="description" content="Explication de mon projet de développement du jeu de King Domino codé en Python par Semih Avci.">
+    <title>Projet Python : King Domino - Semih Avci</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="../themes/projet-kingdomino.css">
+    <link rel="stylesheet" href="../themes/projets.css"> 
 </head>
 <body class="project-detail-body">
+
+    <nav class="navbar">
+        <a href="../index.html" class="nav-brand">
+            <img src="../images/logosemih.png" alt="Logo Avci Semih" class="nav-logo-img">
+        </a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <div class="nav-links">
+            <a href="../index.html">Accueil</a>
+            <a href="../apropos.html">À propos</a>
+            <a href="../parcours.html">Parcours</a>
+            <a href="../experience.html">Expérience</a>
+            <a href="../competences.html">Compétences</a>
+            <a href="../projets.html" class="active">Projets</a>
+            <a href="../divers.html">Divers</a>
+            <a href="../contact.html">Contact</a>
+            <a href="../CV-AVCI-Semih.pdf" target="_blank" class="btn-cv-mobile">Mon CV</a>
+        </div>
+
+        <a href="../CV-AVCI-Semih.pdf" target="_blank" class="btn-cv-desktop">Mon CV</a>
+    </nav>
 
     <div class="main-container">
         
         <header class="project-header-simple">
             <div class="back-btn-container">
-                <a href="../projets.html" class="back-link">&larr; Retour aux projets</a><br><br>
-		<a href="../parcours.html" class="back-link">&larr; Retour au parcours </a>
+                <a href="../projets.html" class="back-link">&larr; Retour aux projets</a>
             </div>
 
             <h1 class="page-title">King Domino<span class="dot">.</span></h1>
@@ -43,15 +69,15 @@
         <section class="work-section">
             <div class="featured-card" style="margin-bottom: 30px;">
                 <h2 class="card-title">2. Travail Fourni</h2>
-                <p class="card-text">
+                <div class="card-text">
                     Nous avons travaillé en binôme en séparant le code en plusieurs modules distincts pour faciliter la collaboration.
                     <br><br>
                     <strong>Répartition des tâches :</strong>
                     <ul>
                         <li><strong>Mon Binôme :</strong> S'est occupé de la gestion des données (Création du royaume, pioche de domino) et de la boucle principale du jeu (Parties A, C, E).</li>
-                        <li><strong>Moi (Semih) :</strong>Je me suis occupé du moteur de l'application, ce qui inclu les règles de placement des dominos et l'algorithme de calcul des scores. (Parties B, D, F).</li>
+                        <li><strong>Moi (Semih) :</strong> Je me suis occupé du moteur de l'application, ce qui inclut les règles de placement des dominos et l'algorithme de calcul des scores (Parties B, D, F).</li>
                     </ul>
-                </p>
+                </div>
                 <div class="tech-tags">
                     <span>Python Avancé</span>
                     <span>Matrices 2D</span>
@@ -66,7 +92,7 @@
                     <details>
                         <summary class="module-header">
                             <h3>Partie A : Gestion du royaume <span class="badge-binome">CODE BINÔME</span></h3>
-                            <p>Initialisation des structures de données (Matrices). <em>(Cliquer pour dérouler)</em></p>
+                            <span style="display:block; margin-top:5px; font-style:italic; font-size:0.9rem;">Initialisation des structures de données (Matrices). (Cliquer pour dérouler)</span>
                         </summary>
                         
                         <div class="code-window">
@@ -80,8 +106,8 @@ def creerRoyaume(taille=7):
     sauf la case centrale qui contient 'CH' (Château).
     """</span>
     
-    <span class="code-comment"># Vérification de sécurité : la taille doit être impaire</span>
-    if taille < 0 or taille % 2 == 0:  
+    <span class="code-comment"># Correction : &lt; au lieu de < </span>
+    if taille &lt; 0 or taille % 2 == 0:  
         print("Impossible de créer un royaume : 'taille' est pair ou négatif")
         return None 
 
@@ -145,7 +171,7 @@ def afficherRoyaume(royaume, joueur="A", vide="  "):
                     <details>
                         <summary class="module-header header-highlight">
                             <h3 class="text-highlight">Partie B : Gestion du placement <span class="badge-me">MON CODE</span></h3>
-                            <p>Gestion du positionnement des dominos et respect des règles du jeu (contraintes => adjacent ? collision avec un autre domino ? orientation ? en dehors du royaume ? etc ...) <em>(Cliquer pour dérouler)</em></p>
+                            <span style="display:block; margin-top:5px; font-style:italic; font-size:0.9rem;">Gestion du positionnement des dominos et respect des règles du jeu. (Cliquer pour dérouler)</span>
                         </summary>
 
                         <div class="code-window">
@@ -171,9 +197,6 @@ from A_gestion_royaume import * def partie_droite_domino(posL, posC, dir):
 def espaceLibre(royaume, posL, posC, dir):
     <span class="code-docstring">"""
     Vérifie si un domino peut être posé à un endroit donné.
-    Contraintes :
-    1. Ne pas sortir des limites du tableau (Out of bounds).
-    2. Les cases doivent être vides (None).
     """</span>
     
     taille_roy = len(royaume)
@@ -181,9 +204,10 @@ def espaceLibre(royaume, posL, posC, dir):
 
     if droite == None: return False
 
-    <span class="code-comment"># Vérification des bornes (0 <= index < taille)</span>
-    if not(0 <= posL < taille_roy and 0 <= posC < taille_roy and 
-           0 <= droite[0] < taille_roy and 0 <= droite[1] < taille_roy):
+    <span class="code-comment"># Vérification des bornes (0 &lt;= index &lt; taille)</span>
+    # Correction : Utilisation de &lt; et &lt;= pour le HTML
+    if not(0 &lt;= posL &lt; taille_roy and 0 &lt;= posC &lt; taille_roy and 
+           0 &lt;= droite[0] &lt; taille_roy and 0 &lt;= droite[1] &lt; taille_roy):
         return False
 
     <span class="code-comment"># Vérification du contenu des cases</span>
@@ -220,17 +244,17 @@ def ajoutDomino(royaume, cases_libres, domino, posL, posC, dir):
 def voisinages(royaume, posL, posC, libres=False):
     <span class="code-docstring">"""
     Retourne la liste des coordonnées voisines (Haut, Bas, Gauche, Droite).
-    Utilisé plus tard pour le calcul des scores (zones adjacentes).
     """</span>
     
     voisins = []
     taille_roy = len(royaume)
 
     <span class="code-comment"># Vérification simplifiée des 4 directions</span>
-    if posL < taille_roy - 1: voisins.append((posL+1, posC)) <span class="code-comment"># Haut</span>
-    if posL > 0: voisins.append((posL-1, posC)) <span class="code-comment"># Bas</span>
-    if posC > 0: voisins.append((posL, posC-1)) <span class="code-comment"># Gauche</span>
-    if posC < taille_roy - 1: voisins.append((posL, posC+1)) <span class="code-comment"># Droite</span>
+    # Correction : &lt; au lieu de <
+    if posL &lt; taille_roy - 1: voisins.append((posL+1, posC)) <span class="code-comment"># Haut</span>
+    if posL &gt; 0: voisins.append((posL-1, posC)) <span class="code-comment"># Bas</span>
+    if posC &gt; 0: voisins.append((posL, posC-1)) <span class="code-comment"># Gauche</span>
+    if posC &lt; taille_roy - 1: voisins.append((posL, posC+1)) <span class="code-comment"># Droite</span>
             
     return voisins
                             </code></pre>
@@ -242,7 +266,7 @@ def voisinages(royaume, posL, posC, libres=False):
                     <details>
                         <summary class="module-header">
                             <h3>Partie C : Gestion de la pioche des dominos <span class="badge-binome">CODE BINÔME</span></h3>
-                            <p>Chargement des données en format CSV et tirage aléatoire des dominos. <em>(Cliquer pour dérouler)</em></p>
+                            <span style="display:block; margin-top:5px; font-style:italic; font-size:0.9rem;">Chargement des données en format CSV et tirage aléatoire des dominos. (Cliquer pour dérouler)</span>
                         </summary>
 
                         <div class="code-window">
@@ -265,7 +289,8 @@ def extraire_dominos(nom_fichier):
             if '-' in b:
                 v1, v2 = b.split('-')
                 i = int(v1)
-                while int(i) <= int(v2):
+                # Correction : &lt;= 
+                while int(i) &lt;= int(v2):
                     dominos.append((int(i), case1, case2))
                     i = i + 1
             else:
@@ -282,7 +307,8 @@ def extraire_premier_bloc(liste_dominos):
     for i in range(len(premiers_dominos)):
         min_index = i
         for j in range(i + 1, len(premiers_dominos)):
-            if premiers_dominos[j][0] < premiers_dominos[min_index][0]:
+            # Correction : &lt;
+            if premiers_dominos[j][0] &lt; premiers_dominos[min_index][0]:
                 min_index = j
         premiers_dominos[i], premiers_dominos[min_index] = premiers_dominos[min_index], premiers_dominos[i]
     return premiers_dominos
@@ -296,7 +322,8 @@ def piocher_bloc(liste_dominos):
     for i in range(len(premiers_dominos)):
         min_index = i
         for j in range(i + 1, len(premiers_dominos)):
-            if premiers_dominos[j][0] < premiers_dominos[min_index][0]:
+            # Correction : &lt;
+            if premiers_dominos[j][0] &lt; premiers_dominos[min_index][0]:
                 min_index = j
         premiers_dominos[i], premiers_dominos[min_index] = premiers_dominos[min_index], premiers_dominos[i]
     return premiers_dominos
@@ -321,7 +348,7 @@ def afficher_choix_ou_depot(dico):
                     <details>
                         <summary class="module-header header-highlight">
                             <h3 class="text-highlight">Partie D : Gestion des joueurs & IA <span class="badge-me">MON CODE</span></h3>
-                            <p>Système d'interaction avec l'utilisateur et IA classique. <em>(Cliquer pour dérouler)</em></p>
+                            <span style="display:block; margin-top:5px; font-style:italic; font-size:0.9rem;">Système d'interaction avec l'utilisateur et IA classique. (Cliquer pour dérouler)</span>
                         </summary>
 
                         <div class="code-window">
@@ -377,14 +404,14 @@ def pose_domino_manuel(royaume, cases_libres, domino, joueur="A"):
 def pose_domino_random(royaume, cases_libres, domino, joueur="A", TENTATIVES=10000):
     <span class="code-docstring">"""
     IA Aléatoire : Tente 10 000 fois de placer le domino au hasard.
-    Si ça ne marche pas, le domino est jeté.
     """</span>
     
     directions = ["top", "bottom", "left", "right"]
     domino_place = False 
     i = 0 
     
-    while i < TENTATIVES and not domino_place:
+    # Correction : &lt;
+    while i &lt; TENTATIVES and not domino_place:
         <span class="code-comment"># Choix aléatoire d'une case libre</span>
         posL, posC = random.choice(cases_libres)
         direction = random.choice(directions)
@@ -416,7 +443,7 @@ def pose_domino(royaume, cases_libres, domino, dico_configurations, joueur):
                     <details>
                         <summary class="module-header">
                             <h3>Partie E : Tour de jeu <span class="badge-binome">CODE BINÔME</span></h3>
-                            <p>Contrôle de l'enchaînement des tours et du choix des dominos. <em>(Cliquer pour dérouler)</em></p>
+                            <span style="display:block; margin-top:5px; font-style:italic; font-size:0.9rem;">Contrôle de l'enchaînement des tours et du choix des dominos. (Cliquer pour dérouler)</span>
                         </summary>
 
                         <div class="code-window">
@@ -518,7 +545,7 @@ def premier_tour(liste_dominos, joueurs, configurations):
                     <details>
                         <summary class="module-header header-highlight">
                             <h3 class="text-highlight">Partie F : Calcul des scores <span class="badge-me">MON CODE</span></h3>
-                            <p>L'algorithme qui calcule les points par groupe de paysages (ce dernier aussi appelé type). <em>(Cliquer pour dérouler)</em></p>
+                            <span style="display:block; margin-top:5px; font-style:italic; font-size:0.9rem;">L'algorithme qui calcule les points par groupe de paysages. (Cliquer pour dérouler)</span>
                         </summary>
 
                         <div class="code-window">
@@ -636,7 +663,7 @@ def jeu_complet():
             <h2 class="card-title">3. Difficultés Rencontrées</h2>
             <p class="card-text">
                 <strong>1. Le code récursive (Partie F) :</strong><br>
-                La difficulté majeure a été de concevoir l'algorithme de calcul des points. Il fallait s'assurer que la fonction ne tourne pas en boucle infinie en visitant les mêmes cases. J'ai résolu cela en passant une liste `cases_visitees` en paramètre de l'appel récursif dans la fonction <code> couronnes_zone</code>.
+                La difficulté majeure a été de concevoir l'algorithme de calcul des points. Il fallait s'assurer que la fonction ne tourne pas en boucle infinie en visitant les mêmes cases. J'ai résolu cela en passant une liste `cases_visitees` en paramètre de l'appel récursif dans la fonction <code>couronnes_zone</code>.
                 <br><br>
                 <strong>2. Gestion des coordonnées :</strong><br>
                 Manipuler des matrices (Ligne, Colonne) est parfois très difficile par rapport aux coordonnées classiques que l'on connait en maths (X, Y), ce qui a causé quelques bugs de placement au début (Par exemple : nous avons eu une inversion des lignes et des colonnes).
@@ -666,6 +693,4 @@ def jeu_complet():
     <p>&copy; 2026 Avci Semih. Tous droits réservés.</p>
 </footer>
 </body>
-
 </html>
-
