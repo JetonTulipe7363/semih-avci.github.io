@@ -9,7 +9,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    overflow-y: scroll; /* Force la scrollbar */
+    overflow-y: scroll; 
 }
 
 body {
@@ -529,4 +529,5 @@ body {
         gap: 20px;
     }
 }
+
 
