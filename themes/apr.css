@@ -1,3 +1,4 @@
+/* --- RESET GLOBAL --- */
 *,
 *::before,
 *::after {
@@ -9,8 +10,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    /* Optionnel : Force l'affichage de la scrollbar même si la page est courte pour éviter les "sauts" */
-    overflow-y: scroll; 
+    overflow-y: scroll; /* Force la scrollbar */
 }
 
 body {
@@ -33,26 +33,26 @@ body {
     color: #000000;
 }
 
-/* --- DÉBUT CONFIGURATION SCROLLBAR (IDENTIQUE ACCUEIL) --- */
+/* --- SCROLLBAR DORÉE --- */
 ::-webkit-scrollbar {
-    width: 12px; /* Largeur exacte */
+    width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #050505; /* Fond de la barre (Noir fond) */
+    background: #050505;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #aa8c2c; /* Couleur de la barre (Doré foncé) */
-    border-radius: 6px; /* Arrondi */
-    border: 3px solid #050505; /* Bordure noire pour affiner la barre visuellement */
+    background: #aa8c2c;
+    border-radius: 6px;
+    border: 3px solid #050505;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #d4af37; /* Doré plus clair au survol */
+    background: #d4af37;
 }
-/* --- FIN CONFIGURATION SCROLLBAR --- */
 
+/* --- NAVBAR --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -227,206 +227,208 @@ body {
     text-align: center;
 }
 
-h1 {
+/* --- STYLE SPÉCIFIQUE À PROPOS (C'est ici que ça manquait) --- */
+
+.about-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    animation: fade-in 1.5s ease-out;
+}
+
+.identity-card {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    background-color: #0a0a0a;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 60px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    align-items: center;
+    gap: 70px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.identity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    box-shadow: 0 0 15px #d4af37;
+}
+
+.id-photo-wrapper {
+    flex-shrink: 0;
     text-align: center;
+}
+
+.photo-frame {
+    width: 240px;
+    height: 300px;
+    padding: 5px;
+    border: 1px solid #d4af37;
+    position: relative;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.id-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.status-indicator {
+    margin-top: 20px;
+    font-size: 0.7rem;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #d4af37;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #d4af37;
+}
+
+.id-content {
+    flex: 1;
+    text-align: left;
+}
+
+.tech-tag {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a0a0a0;
+    display: block;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.id-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3.8rem;
+    margin: 0;
     font-weight: 400;
-    font-style: italic;
-    margin: 0 0 15px 0;
+    line-height: 1.1;
     background: linear-gradient(to right, #ffffff 20%, #d4af37 50%, #ffffff 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.8));
-    animation: fadeDown 1s ease-out;
 }
 
-.subtitle-instruction {
-    display: block;
-    text-align: center;
+.dot-gold {
     color: #d4af37;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 70px;
-    font-style: normal;
-    opacity: 0.9;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-    animation: fadeIn 1.5s ease-out;
+    -webkit-text-fill-color: #d4af37;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.role {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #a0a0a0;
+    font-weight: 400;
+    margin: 5px 0 25px;
 }
 
-@keyframes fadeDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.separator-line {
+    width: 50px;
+    height: 2px;
+    background: #d4af37;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px #d4af37;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.bio-text p {
+    font-weight: 300;
+    line-height: 1.9;
+    color: #a0a0a0;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
 }
 
-details {
-    width: 90%;
-    max-width: 950px;
-    margin: 0 auto 35px auto;
-    background: linear-gradient(160deg, rgba(20, 18, 10, 0.6) 0%, rgba(10, 10, 10, 0.8) 100%);
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    border-left: 4px solid #aa8c2c;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInUp 0.8s ease forwards;
-    opacity: 0;
-}
-
-details:nth-of-type(1) { animation-delay: 0.1s; }
-details:nth-of-type(2) { animation-delay: 0.3s; }
-details:nth-of-type(3) { animation-delay: 0.5s; }
-
-details:hover {
-    transform: translateY(-3px);
-    background: linear-gradient(160deg, rgba(40, 35, 15, 0.7) 0%, rgba(15, 15, 15, 0.9) 100%);
-    border-color: #d4af37;
-    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
-}
-
-details[open] {
-    background: #080808;
-    border: 1px solid #d4af37;
-    border-left: 4px solid #d4af37;
-    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
-}
-
-summary {
-    list-style: none;
-    padding: 25px 35px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
+.highlight {
+    color: #f0f0f0 !important;
+    border-left: 2px solid #d4af37;
+    padding-left: 15px;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
     background: linear-gradient(to right, rgba(212, 175, 55, 0.05), transparent);
 }
 
-summary::-webkit-details-marker {
-    display: none;
-}
-
-summary strong {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-summary .exp-date {
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #d4af37;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    background: rgba(212, 175, 55, 0.05);
-    border: 1px solid #d4af37;
-    padding: 8px 20px;
-    border-radius: 50px;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-}
-
-summary::after {
-    content: '+';
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 200;
-    color: #d4af37;
-    transition: all 0.4s ease;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-    margin-left: 20px;
-}
-
-details[open] summary::after {
-    content: '−';
-    transform: rotate(180deg);
-    color: #fff;
-    text-shadow: none;
-}
-
-.summary-left {
-    display: inline-flex;
+.id-actions {
+    display: flex;
     align-items: center;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+    margin-top: 40px;
 }
 
-.exp-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    background: #ffffff;
-    border-radius: 50%;
-    padding: 8px;
-    border: 2px solid #d4af37;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-}
-
-details:hover .exp-logo {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-}
-
-details > div {
-    padding: 10px 45px 50px 95px;
-    color: #b0b0b0;
-    font-size: 1.05rem;
-    line-height: 2;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    margin-top: 0;
-    opacity: 0;
-    animation: textFadeIn 0.6s ease 0.2s forwards;
-}
-
-@keyframes textFadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-details p {
-    margin-bottom: 25px;
-    text-align: justify;
-}
-
-details strong {
+.btn-gold {
+    background-color: transparent;
     color: #d4af37;
+    padding: 12px 35px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     font-weight: 600;
+    transition: 0.4s ease;
+    border: 1px solid #d4af37;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
+.btn-gold:hover {
+    background-color: #d4af37;
+    color: #000;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.info-badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    color: #a0a0a0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #050505;
+    color: #d4af37;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    margin-top: auto;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- RESPONSIVE MOBILE --- */
 @media (max-width: 900px) {
     .navbar {
         height: 70px;
@@ -491,48 +493,45 @@ details strong {
         display: inline-block;
     }
 
-    summary {
+    /* Style spécifique Mobile pour la Carte d'Identité */
+    .about-container {
+        padding: 20px 10px;
+    }
+
+    .identity-card {
         flex-direction: column;
-        align-items: flex-start;
+        padding: 40px 20px;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .photo-frame {
+        width: 180px;
+        height: 220px;
+        margin: 0 auto;
+    }
+
+    .id-content {
+        text-align: center;
+    }
+
+    .id-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .separator-line {
+        margin: 25px auto;
+    }
+
+    .highlight {
+        border-left: none;
+        border-top: 2px solid #d4af37;
+        padding: 15px 0 0;
+    }
+
+    .id-actions {
+        flex-direction: column;
+        justify-content: center;
         gap: 20px;
-        padding: 15px;
     }
-
-    .summary-left {
-        width: 100%;
-    }
-
-    .exp-date {
-        align-self: flex-start;
-        margin-left: 80px;
-    }
-
-    summary::after {
-        position: absolute;
-        top: 35px;
-        right: 25px;
-    }
-
-    .exp-logo {
-        width: 40px;
-        height: 40px;
-    }
-
-    summary strong {
-        font-size: 1.3rem;
-    }
-
-    details > div {
-        padding: 20px 25px;
-    }
-}
-
-.site-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #050505;
-    color: #d4af37;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-    margin-top: auto;
 }
