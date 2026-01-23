@@ -445,7 +445,6 @@ body {
         font-size: 0.9rem;
     }
 
-    /* Adaptation Hero pour Mobile */
     .hero-container {
         flex-direction: column-reverse;
         padding: 60px 20px 50px;
@@ -499,3 +498,4 @@ body {
         right: -20px;
     }
 }
+
